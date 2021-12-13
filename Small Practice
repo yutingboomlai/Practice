@@ -1,0 +1,30 @@
+//Ptactice-1, Greatest Common Divisor, 2021/12/10
+
+let max = 0;
+let a = 1300, b = 156, y, z = 0;
+if (a > b) {
+    max = a;
+    min = b;
+}
+else max = b, min = a; //max =1300, min=156
+
+if (max % min === 0) { y = min }
+else {
+    while (max % min !== 0) {
+        y = max % min; //y = 52
+        max = min; //max = 156
+        min = y; //min = 52
+        if (max % min === 0) {
+            y = min; //y = 52
+        }
+        else {
+            y = max % min;
+            max = min;
+            min = y;
+        }
+
+    }
+
+}
+
+console.log(y);
